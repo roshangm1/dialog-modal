@@ -1,0 +1,12 @@
+{
+  "name": "dialog-modal",
+  "version": "0.1.5",
+  "description": "Dialog Modal",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "dialogmodal"
+  ],
+  "author": "Roshan Gautam",
+  "license": "ISC"
+}
