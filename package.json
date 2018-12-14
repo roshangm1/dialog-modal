@@ -1,11 +1,16 @@
 {
   "name": "dialog-modal",
-  "version": "0.1.5",
+  "version": "0.0.3",
   "description": "Dialog Modal",
   "main": "index.js",
   "scripts": {},
   "keywords": [
-    "dialogmodal"
+    "dialogmodal",
+    "react-native-modal",
+    "react-native-popup",
+    "modal",
+    "react-native-dialog",
+    "dialog"
   ],
   "author": "Roshan Gautam",
   "license": "ISC",
