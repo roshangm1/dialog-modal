@@ -15,9 +15,16 @@ You have to import `DialogProvider` from `dialog-modal` and wrap the root screen
 ```
 import { DialogProvider } from "dialog-modal";
 
-DialogProvider>
-    <Main />
-</DialogProvider>
+export default class App extends Component {
+render() {
+    return(
+        DialogProvider>
+            <Main />
+        </DialogProvider>
+    );
+}
+
+}
 ```
 
 Now you can import `withDialogModal` in any screen and use method like `showDialog()` and `closeDialog()` to show and close modal.
