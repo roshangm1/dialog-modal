@@ -4,8 +4,9 @@ Show modal in react native apps without using Modal component.
 
 ## Installing
 
-npm i dialog-modal --save
-yarn add dialog-modal
+`npm i dialog-modal --save`
+OR
+`yarn add dialog-modal`
 
 ## Usage
 
