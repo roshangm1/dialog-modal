@@ -39,7 +39,7 @@ export class DialogProvider extends React.Component {
 
   animatedValue = new Animated.Value(0);
 
-  showDialog = (component, dismissable, style) => {
+  showDialog = (component, dismissable = true, style) => {
     // alert('alert');
     this.component = component;
     this.setState(
