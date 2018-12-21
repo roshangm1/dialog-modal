@@ -56,6 +56,15 @@ class Home extends Component {
 export default withDialogModal(Home)
 ```
 
+Along with a component, `showDialog` can also take two more parameters, i.e `dismissable` and `style`.
+
+`style` - You can give custom styles to the dialog box itself.
+
+`dismissable` - Boolean value if set false, the modal will not be closed on backdrop pressed. `true` by default.
+
+Example:
+`this.props.showDialog(<Component />, false, { marginHorizontal: 50 })`
+
 ## Authors
 
 - **Roshan Gautam** - (https://github.com/roshangm1)
@@ -68,7 +77,3 @@ This project is licensed under the MIT License.
 
 - Inspired by GlobalAlert tutorial by HandlebarLabs (Spencer Carli)
   https://learn.handlebarlabs.com/
-
-## TODO
-
-- Provide custom theming for modal.

@@ -31,7 +31,7 @@ export const DialogConsumer = DialogContext.Consumer;
 const initialState = {
   visible: false,
   component: null,
-  dissmisable: true
+  dismissable: true
 };
 
 export class DialogProvider extends React.Component {
@@ -39,14 +39,14 @@ export class DialogProvider extends React.Component {
 
   animatedValue = new Animated.Value(0);
 
-  showDialog = (component, dissmisable, style) => {
+  showDialog = (component, dismissable, style) => {
     // alert('alert');
     this.component = component;
     this.setState(
       {
         visible: true,
         style,
-        dissmisable
+        dismissable
       },
       () => {
         Animated.timing(this.animatedValue, {
@@ -69,7 +69,7 @@ export class DialogProvider extends React.Component {
   };
 
   renderModal = () => {
-    const { dissmisable } = this.state;
+    const { dismissable } = this.state;
 
     const modalStyles = [
       styles.modal,
@@ -87,7 +87,7 @@ export class DialogProvider extends React.Component {
       }
     ];
     return (
-      <TouchableWithoutFeedback onPress={dissmisable ? this.closeDialog : null}>
+      <TouchableWithoutFeedback onPress={dismissable ? this.closeDialog : null}>
         <View style={styles.modalContainer}>
           <TouchableWithoutFeedback>
             <Animated.View style={modalStyles}>{this.component}</Animated.View>
