@@ -2,17 +2,19 @@ import React from "react";
 import { DialogConsumer } from ".";
 
 export function withDialogModal(Component) {
-  return function WrapperComponent(props) {
-    return (
-      <DialogConsumer>
-        {context => (
-          <Component
-            {...props}
-            showDialog={context.showDialog}
-            closeDialog={context.closeDialog}
-          />
-        )}
-      </DialogConsumer>
-    );
+  return class WrapperComponent extends React.Component {
+    render() {
+      return (
+        <DialogConsumer>
+          {context => (
+            <Component
+              {...this.props}
+              showDialog={context.showDialog}
+              closeDialog={context.closeDialog}
+            />
+          )}
+        </DialogConsumer>
+      );
+    }
   };
 }
