@@ -3,7 +3,7 @@ import {
   Animated,
   StyleSheet,
   TouchableWithoutFeedback,
-  View
+  View,
 } from "react-native";
 
 const styles = StyleSheet.create({
@@ -15,13 +15,13 @@ const styles = StyleSheet.create({
     top: 0,
     bottom: 0,
     left: 0,
-    right: 0
+    right: 0,
   },
   modal: {
     backgroundColor: "#fafbfc",
     // paddingHorizontal: 20
-    marginHorizontal: 10
-  }
+    marginHorizontal: 10,
+  },
 });
 
 export const DialogContext = React.createContext({});
@@ -31,7 +31,7 @@ export const DialogConsumer = DialogContext.Consumer;
 const initialState = {
   visible: false,
   component: null,
-  dismissable: true
+  dismissable: true,
 };
 
 export class DialogProvider extends React.Component {
@@ -46,13 +46,13 @@ export class DialogProvider extends React.Component {
       {
         visible: true,
         style,
-        dismissable
+        dismissable,
       },
       () => {
         Animated.timing(this.animatedValue, {
           toValue: 1,
           useNativeDriver: true,
-          duration: 150
+          duration: 150,
         }).start();
       }
     );
@@ -62,7 +62,7 @@ export class DialogProvider extends React.Component {
     Animated.timing(this.animatedValue, {
       toValue: 0,
       useNativeDriver: true,
-      duration: 150
+      duration: 150,
     }).start(() => {
       this.setState({ ...initialState });
     });
@@ -80,11 +80,11 @@ export class DialogProvider extends React.Component {
           {
             scale: this.animatedValue.interpolate({
               inputRange: [0, 1],
-              outputRange: [0.5, 1]
-            })
-          }
-        ]
-      }
+              outputRange: [0.5, 1],
+            }),
+          },
+        ],
+      },
     ];
     return (
       <TouchableWithoutFeedback onPress={dismissable ? this.closeDialog : null}>
@@ -102,7 +102,11 @@ export class DialogProvider extends React.Component {
 
     return (
       <DialogContext.Provider
-        value={{ showDialog: this.showDialog, closeDialog: this.closeDialog }}
+        value={{
+          showDialog: this.showDialog,
+          closeDialog: this.closeDialog,
+          isModalVisible: visible,
+        }}
       >
         {this.props.children}
         {visible && this.renderModal()}
