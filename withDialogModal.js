@@ -11,6 +11,7 @@ export function withDialogModal(Component) {
               {...this.props}
               showDialog={context.showDialog}
               closeDialog={context.closeDialog}
+              isModalVisible={context.isModalVisible}
             />
           )}
         </DialogConsumer>
